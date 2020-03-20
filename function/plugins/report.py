@@ -7,7 +7,7 @@ Function：Ban group and send some messages
 '''
 
 def number_of_group():
-    number_of_group = 519153571 #修改你要控制的群号
+    number_of_group = 1234567 #修改你要控制的群号
     return number_of_group
 
 
