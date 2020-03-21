@@ -1,8 +1,8 @@
 '''
 Author：Luo
-Date：2020.03.19
-Version：1.1.0
-Function：Ban group and send some messages
+Date：2020.03.21
+Version：1.2.0
+Function：Banned timing and send some messages
 
 '''
 
@@ -15,7 +15,7 @@ async def help(session: CommandSession):
     message_type=session.ctx['message_type']
     if message_type == 'private':
         await session.send('''1.定时解除禁言
-2.立即禁言
+2.定时禁言
 给机器人发送对应数字即可''')
 
 

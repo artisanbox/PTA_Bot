@@ -1,8 +1,8 @@
 '''
 Author：Luo
-Date：2020.03.20
-Version：1.1.5
-Function：Ban group and send some messages
+Date：2020.03.21
+Version：1.2.0
+Function：Banned timing and send some messages
 
 '''
 import nonebot
