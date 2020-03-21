@@ -1,7 +1,7 @@
 '''
 Author：Luo
 Date：2020.03.21
-Version：1.2.0
+Version：1.2.1
 Function：Banned timing and send some messages
 
 '''
@@ -22,16 +22,21 @@ async def free_group(session: CommandSession):
     global number_of_group,notice_of_free
     message_type = session.ctx['message_type']
     user_id = session.ctx['user_id']
+    
     if message_type == 'private' and user_id == function.plugins.report.your_qq_num():
-        duration = str(session.get('duration', prompt='明天几点钟解除禁言呀？例如7-45'))
+        duration = str(session.get('duration', prompt='什么时候解除禁言呀？例如7-45'))
         duration = duration.split('-')
+        
         if not duration[0].isdigit() and not duration[1].isdigit():
             await session.pause('时间应该是数字,例如：7，8，9')
         notice_of_free = session.get('notice_of_free', prompt='解除禁言后你想通知什么内容？')
         at_notice = str(session.get('at_notice', prompt='你想@全员吗？'))
+        
         if at_notice.find('不') == -1:
             notice_of_free += '[CQ:at,qq=all]' 
+            
         await session.send('定时解除设置成功')
+        
         duration_hours = int(duration[0]) - int(time.strftime("%H", time.localtime()))
         duration_mins = int(duration[1]) - int(time.strftime("%M", time.localtime()))
         

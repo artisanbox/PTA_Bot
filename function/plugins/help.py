@@ -1,7 +1,7 @@
 '''
 Author：Luo
 Date：2020.03.21
-Version：1.2.0
+Version：1.2.1
 Function：Banned timing and send some messages
 
 '''
