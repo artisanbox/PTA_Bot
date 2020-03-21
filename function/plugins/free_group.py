@@ -1,7 +1,7 @@
 '''
 Author：Luo
 Date：2020.03.21
-Version：1.2.1
+Version：1.2.1.1
 Function：Banned timing and send some messages
 
 '''
@@ -51,7 +51,7 @@ async def free_group(session: CommandSession):
             func=session.bot.send_group_msg,  # 要添加任务的函数，不要带参数
             trigger=trigger,  # 触发器
             #args=(12345,),  # 函数的参数列表，注意：只有一个值时，不能省略末尾的逗号
-            kwargs={'group_id':number_of_group,'message' :notice_of_free}
+            kwargs={'group_id':number_of_group,'message' :notice_of_free},
             #misfire_grace_time=60,  # 允许的误差时间，建议不要省略
             #jobstore='default',  # 任务储存库，在下一小节中说明
         )
