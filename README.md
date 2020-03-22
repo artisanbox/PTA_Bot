@@ -1,4 +1,4 @@
-# 定时任务—QQ机器人（nonebot_qq）
+# 定时任务—QQ机器人（Nonebot_QQ）
 
 ## 更新日志：
 ### 1.2.0 - 2020.3.21
@@ -19,19 +19,20 @@
 
 ## 使用方法
 - 回复机器人：'帮助' 即可获取帮助指令
-- 配置超级QQ号：config/py 中的QQ号修改为自己的即可
-- 设置群号和自己QQ号：在 function/plugins 中的 report.py 中修改
+- 配置机器人QQ号：config/py 中的QQ号修改为自己的即可
+- 设置群号和个人QQ号：在 function/plugins 中的 report.py 中修改
+- 注意：机器人QQ号与个人QQ号非同一QQ
 - 具体问题参看下方
-
-## notbot官方文档：
-- https://nonebot.cqp.moe/
 
 ## 安装方法：
 - https://nonebot.cqp.moe/guide/installation.html
 
-## 安装配置:
+## 配置环境：
+- nonebot ```pip install nonebot```
+- scheduler ```pip install "nonebot[scheduler]"```
 
-安装完成后，再次配置CQHTTP插件，打开名为 “user-id”.json 的文件（“user-id” 为你登录的 QQ 账号）
+## 安装配置:
+安装完成后，再次配置CQHTTP插件，在CQHTTP插件的目录下在 config/ 下，打开名为 “user-id”.json 的文件（“user-id” 为你登录的 QQ 账号）
 修改文件为如下配置项:
 ```
 {
@@ -49,3 +50,28 @@
 
 这表示 CQHTTP 插件已经成功地连接上了 NoneBot，与此同时，插件的日志文件中也会输出反向 WebSocket 连接成功的日志。
 
+## 更新计划：
+- 产品定位：
+    -【核心】1.定时任务：
+        -a.任务：群禁言，定时群消息，定时个人消息
+
+### 1.2.2 - 2020.4.1前完成
+- //新增数据初始化交互
+- //优化数据存储结构
+    - report.py => default.py 
+        - '初始化' => 获取群号，机器人QQ号，控制QQ号
+        - 数据存放 => data[group,Bot,self].txt: session.get() 获取 numbers 写入文件
+        - 数据读取 => data[group,Bot,self].txt
+	
+### 1.2.3 - 2020.4.15前完成
+- 定时多个群消息
+
+### 1.2.4 - 2020.4.20前完成
+- 定时多个个人消息
+
+### 1.2.5 - 2020.5.1前完成
+- 新增取消任务
+- 查看当前未执行任务
+
+### 1.3 - 2020.5.15前完成
+- 优化Bug，增加代码的稳定性
