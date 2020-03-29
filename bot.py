@@ -1,8 +1,8 @@
 '''
 Author：Luo
-Date：2020.03.21
-Version：1.2.1.1
-Function：Banned timing and send some messages
+Date：2020.03.28
+Version：1.2.3
+Function：Planning Tasks Assistant
 
 '''
 import nonebot

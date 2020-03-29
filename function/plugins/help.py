@@ -1,8 +1,8 @@
 '''
 Author：Luo
-Date：2020.03.21
-Version：1.2.1.1
-Function：Banned timing and send some messages
+Date：2020.03.28
+Version：1.2.3
+Function：Planning Tasks Assistant
 
 '''
 
@@ -14,8 +14,11 @@ import nonebot
 async def help(session: CommandSession):
     message_type=session.ctx['message_type']
     if message_type == 'private':
-        await session.send('''1.定时解除禁言
-2.定时禁言
-给机器人发送对应数字即可''')
+        await session.send('''0.初始化数据<初始化>
+1.定时解除群禁言<定时解除>
+2.定时开始群禁言<定时禁言>
+3.添加你要的控制QQ群<添加群号>
+4.中断当前对话<取消>
+(未初始化请先初始化)''')
 
 
